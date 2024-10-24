@@ -1,72 +1,78 @@
-import React from 'react'
-import Template from './Template'
+import { useState } from 'react'
+import { FaInstagram } from "react-icons/fa"; 
+import { CiFacebook } from "react-icons/ci";
+import { FaTwitter } from "react-icons/fa";
+import { SiPubg } from "react-icons/si";
 
 
 
-const Home = () => {
-
-  let Obj = [
+function Home()  {
+  const [cards] = useState([
     {
-    name: "saravanan",
-    age: 23,
-    place : "Palani",
+   tittle : "saravanan",
+    text : "Lorem, ipsum dolor sit amet consectetur adipisicing elit.Non consequuntur nostrum numquam dolorem expedita, nemo omnis architecto vero impedit?",
+    fb : "15k"
+ 
 },
 {
-    name: "sds",
-    age: 25,
-    place : "Palani"
+  tittle : "saravanan",
+   text : "Palani",
+   fb : "25k"
+  
 },
 {
-    name: "naveen",
-    age: 25,
-    place : "Palani"
-},
-{
-  name: "naveen",
-  age: 25,
-  place : "Palani"
-},
-{
-  name: "naveen",
-  age: 25,
-  place : "Palani"
-},
-{
-  name: "sds",
-  age: 25,
-  place : "Palani"
-},
-{
-  name: "sds",
-  age: 25,
-  place : "Palani"
-}]
+  tittle : "saravanan",
+   text : "Palani",
+   
 
-
-
-  return (
-    <div className='w-full min-h-screen h-auto bg-red-500'>
-        {/* <div className='bg-yellow-100 m-8 mt-0 p-8 h-auto min-h-[60vh] w-auto'> */}
-        <Template heading={"Home Page"} 
-                para={"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae saepe temporibus distinctio, assumenda rerum provident quaerat nostrum necessitatibus enim eos blanditiis asperiores delectus quos, illum quibusdam. Deleniti, expedita, sequi excepturi amet optio, possimus harum fuga iusto doloribus debitis provident aperiam!"} 
-                click={"Home Button"}
-                image={"https://images.pexels.com/photos/259915/pexels-photo-259915.jpeg?auto=compress&cs=tinysrgb&w=600"}/>
-        {/* </div> */}
-
-        {/*  */}
-
-        {Obj.map(o => (
-          <div className='flex m-2'>
-            <div className='flex flex-col h-[200px] bg-blue-400 m-2 p-4 rounded-xl ' >
-            <div><span className='font-bold'>Name :</span>{o.name}</div>
-            <div><span className='font-bold'>Age :</span>{o.age}</div>
-            <div><span className='font-bold'>Location :</span>{o.place}</div>
-            {/* <img src={o.image} alt="" className='object-cover w-20'/> */}
-          </div>
-          </div>
-        ))}
-    </div>
-  )
+},
+ {
+  tittle : "saravanan",
+   text : "Palani",
+},
+{
+  tittle : "saravanan",
+   text : "Palani",
+},
+{
+  tittle : "saravanan",
+   text : "Palani",
 }
+])
 
+return(
+  <div>
+  <section>
+      <div className="container">
+      <h1>information</h1>
+      <div className="cards shadow-10%">
+
+          {cards.map((card, i) => (
+              <div key={i} className="card">
+              <h3 >
+                  {card.tittle}
+              </h3>
+              <p>
+                {card.text}
+                </p>
+                <div className="logo">
+<div className='text-2xl flex gap-3'><CiFacebook className='bg-blue-700'/><FaInstagram className='bg-pink-600' /><FaTwitter className='bg-blue-400'/><SiPubg className='bg-yellow-400'/></div>
+                </div>
+                <div>
+                <button className="btn">Hire Me</button>
+                <div className='text-2xl font-size-10px flex gap-5 pt-4 pl-8'>
+                    <div className='bg-blue-700 '><CiFacebook/><div className='pt-4'>{card.fb}</div></div>
+                    <div className='bg-pink-600'><FaInstagram /><div className='pt-4'>21m</div></div>
+                    <div className='bg-blue-400'><FaTwitter /><div className='pt-4'>11k</div></div>
+                    <div className='bg-yellow-400'><SiPubg/><div className='pt-4'>50m</div></div>
+                  </div>
+                </div>
+             </div>
+          ))
+          }
+          </div>            
+      </div>
+  </section>
+</div>)
+}
 export default Home

@@ -6,6 +6,8 @@ import Home from "./Pages/Home";
 import Contacts from "./Pages/Contacts";
 import Service from "./Pages/Service";
 import Product from "./Pages/Product";
+import Footer from "./Components/Footer";
+import Counter from "./Components/Counter";
 
 
 const App = () => {
@@ -19,6 +21,8 @@ const App = () => {
             <Route path="/contact" element={<Contacts />} />
             <Route path="/service" element={<Service />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/Footer" element={<Footer />} />
+            <Route path="/Counter" element={<Counter />} />
           </Route>
         </Routes>
       </BrowserRouter>
